@@ -140,9 +140,13 @@
   function stopTheirSound() {
     try { audio.pauseMusic(); audio.stop(); audio.silenceSamples(); audio.stopSlide(); } catch (e) { /* not started */ }
   }
-  function applyPref() {      // their own switch, as their mute button sets it
+  // Their own switch, as their mute button sets it, at every run start. Always called, even when their flags already say
+  // "on": under the board / lobby their music was stopped (stopTheirSound) with their flag left on, and only their
+  // setMusic(true) starts it again (their resumeMusic() starts no second copy while one plays). QA 2026-11-25, build 1:
+  // "if the game is played again and again the BGM just goes away" (it came back only in the first run).
+  function applyPref() {
     var on = !pref;
-    if (audio.music !== on || audio.sfx !== on) { audio.setMusic(on); audio.setSfx(on); }
+    audio.setMusic(on); audio.setSfx(on);
     window.soundUI();
   }
   // Their mute button in a run: their onclick runs first (registered before this file), then the choice is remembered.
