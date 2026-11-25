@@ -1,0 +1,22 @@
+<!doctype html>
+<!-- The game itself: the client's own page (source/game.html: their markup, stylesheets and classic scripts, copied
+     in at build time by vite.gamebull.config.ts, unchanged, plus gb/client-hooks.js after their yokocho.js), then the
+     GameBull shell. Loaded by index.html in a frame filling the page (their CSS fits their 9:16 #game to it). -->
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>渋谷横丁 · ジョッキすべり</title>
+<meta name="theme-color" content="#142638"><meta name="description" content="提灯の灯る横丁で、左にスワイプ。奥ほど高得点、壁に当てたら0点の縦画面ゲーム。"><link rel="icon" href="icons/favicon.png"><link rel="preload" as="image" href="assets/optimized/shop-00.webp" fetchpriority="high"><link rel="stylesheet" href="yokocho.css?v=1"><link rel="stylesheet" href="yokocho-retro.css?v=subtle-gold&b=1"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <script type="module" crossorigin src="./gb/app-S-9vsgZY.js"></script>
+  <link rel="modulepreload" crossorigin href="./gb/nozoom-D5LYTtKU.js">
+  <link rel="stylesheet" crossorigin href="./gb/app-C_RydAWj.css">
+</head>
+<body>
+<main id="game" aria-label="渋谷横丁 ジョッキすべり">
+<header><div class="lives"><img src="assets/optimized/yokocho-mug.webp" alt="残り"><span id="lives">×6</span></div><div class="header-time"><svg class="clock-icon" viewBox="0 0 32 36" aria-hidden="true"><path d="M12 2h8M16 2v5M25 8l3-3M16 8a12 12 0 1 0 0 24 12 12 0 0 0 0-24Z M16 12v8l5 3" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/></svg><div id="timer" role="timer">15秒</div></div><div class="score"><span class="score-label">スコア</span><div class="score-value"><strong id="score">0</strong><small>点</small></div></div><button id="mute-toggle" aria-label="ミュート解除" aria-pressed="true">🔇</button></header><div id="current-shop">韓国食市</div><div id="bonus-zone" aria-label="壁のすぐ手前：300点ゾーン"><strong>300<span>点ゾーン</span></strong></div><div id="throw-points" hidden></div><div id="shadow"></div><img id="mug" src="assets/optimized/yokocho-mug.webp" alt="ビールジョッキ" draggable="false"><div id="arrow" aria-hidden="true">➜</div><div id="feedback" role="status" aria-live="polite"></div>
+<section id="instruction"><strong id="message">奥を狙え！<br>壁に当てたら0点！</strong><span id="hint">通常1〜100点・終点の金色ゾーンは300点！</span><div id="power"><i></i></div></section><div id="route" aria-label="横丁案内図：右が入口、左が終点300点"><span>入口</span><div id="route-scale"><i id="route-mug"></i></div><span id="route-distance">終点300点</span></div><span id="sound-status" hidden>ミュート中</span>
+<dialog id="result"><p>15秒・6投のスコア勝負</p><h2 id="result-title">おつかれさま！</h2><strong id="result-score"></strong><p id="best"></p><p id="result-breakdown"></p><button id="replay" class="primary">もう一度、乾杯！</button></dialog><section id="tour-controls" hidden><strong id="tour-title"></strong><small id="tour-detail"></small><select id="shop-select" aria-label="見たい店舗"></select><div><button id="tour-prev">← 前</button><button id="tour-next">次 →</button></div><button id="tour-return">ゲームに戻る</button></section><div id="loading">横丁の開店準備中…</div></main><script src="yokocho-assets.js?v=1"></script><script src="yokocho-audio.js?v=1"></script><script src="yokocho-effects.js?v=1"></script><script src="yokocho-break.js?v=1"></script><script src="yokocho.js?v=entry&b=1"></script><script src="gb/client-hooks.js?v=1"></script><script src="yokocho-scene.js?v=1"></script>
+<div id="gb-root"></div>
+</body>
+</html>

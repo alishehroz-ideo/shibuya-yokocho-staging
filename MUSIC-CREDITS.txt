@@ -1,0 +1,9 @@
+BGM: おまつりばやし (Track 1)
+Composer: 蒲鉾さちこ
+Source: https://opentracks.com/bgm/detail/19295
+License: https://opentracks.com/help/articles/license/
+Creator conditions: https://opentracks.com/creator/detail/418
+Downloaded from the official download button on 2026-11-24.
+Used only as background music in this game. Original recording unchanged.
+The audio is packaged as encrypted game data, not exposed as a standalone MP3 download.
+Copyright remains with the composer. Do not redistribute the music separately.

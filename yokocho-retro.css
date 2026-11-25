@@ -1,0 +1,38 @@
+@font-face{font-family:YokochoPixel;src:url('assets/fonts/DotGothic16-Regular.ttf') format('truetype');font-style:normal;font-weight:100 900;font-display:swap}
+html body,body button,body select,#game *,#result *{font-family:YokochoPixel,monospace!important;letter-spacing:.035em}
+#mute-toggle{font-family:system-ui!important}#message{font-size:3.9cqw;line-height:1.3}#hint{font-size:2.65cqw;line-height:1.3}#round{font-size:2.65cqw}#bonus-zone strong{font-weight:400}
+#route{top:80%;left:4%;width:92%;height:5.2%;padding:0 3cqw 1.5cqw;gap:3cqw;border:2px solid #48240f;border-top-color:#cba06a;border-radius:3px;background:repeating-linear-gradient(2deg,#8f542e30 0 1px,transparent 1px 7px),linear-gradient(#ad7443,#704121);box-shadow:0 3px 0 #301a0c,0 5px 8px #0008;color:#ffe2a5;font-size:3cqw;text-shadow:1px 2px #3d1d0b;z-index:3}
+#route>span:first-child{font-size:3cqw}#route-distance{line-height:1.2;max-width:18%;white-space:normal;font-size:3.2cqw;padding-left:4cqw;position:relative}#route-distance:before{content:'';position:absolute;left:0;top:10%;width:3cqw;height:5cqw;border-top:2px solid #331710;border-bottom:2px solid #331710;border-radius:40%;background:repeating-linear-gradient(0deg,transparent 0 3px,#71160955 3px 4px),#e34825;box-shadow:0 0 8px #ffb347}
+#route>div{background:#38230f;border-top:1px solid #241307;height:4px}.route-score-tick{font-size:2.4cqw;top:7px;color:#ffe8b6}#route-mug{box-shadow:0 0 6px #ffdf6d}
+#start{top:86.5%;left:19%;width:62%;font-size:4.2cqw;padding:2cqw 1cqw;z-index:3;border-radius:3px}
+#view-shops{bottom:.7%;left:33%;width:34%;height:6%;padding:0;border:0;border-top:4px solid #422510;border-radius:0;background:linear-gradient(90deg,#9e291e 0 48.5%,transparent 48.5% 51.5%,#a72c20 51.5%);box-shadow:0 3px 6px #0006;color:#ffe4a5;font-size:3.7cqw;text-shadow:0 2px #5c170f;z-index:3;clip-path:polygon(0 0,100% 0,100% 96%,53% 100%,51.5% 14%,48.5% 14%,47% 100%,0 96%)}
+#view-shops span{position:relative;padding:1cqw 0;background:#a12b20}#view-shops:hover{filter:brightness(1.15)}#view-shops:focus-visible{outline-offset:-3px}
+#shopfront-props{position:absolute;inset:0;pointer-events:none;z-index:2}.ambient-lantern{position:absolute;top:86%;width:7%;height:7%;display:grid;place-content:center;text-align:center;line-height:1.1;font-size:2.7cqw;color:#451d0f;border-radius:42%;border-top:4px solid #392719;border-bottom:4px solid #392719;background:repeating-linear-gradient(0deg,transparent 0 4px,#9a311d66 4px 5px),radial-gradient(ellipse,#ffe0a0,#ee743e 65%,#b52b1c);box-shadow:0 0 15px #ff9f4655;transform-origin:50% -10%;animation:lantern-sway 4.5s ease-in-out infinite alternate}.ambient-lantern:before{content:'';position:absolute;bottom:100%;left:50%;height:2cqw;border-left:1px solid #7e542a}.left-lantern{left:6%}.right-lantern{right:6%;animation-delay:-2s}
+.beer-crate{position:absolute;left:18%;bottom:.4%;width:13%;height:4.4%;border:2px solid #e4a432;background:repeating-linear-gradient(90deg,transparent 0 12%,#8e450e 12% 17%),#d68d20;box-shadow:2px 3px #43270f;transform:rotate(-5deg)}.beer-crate b{position:absolute;top:32%;left:22%;font-size:2.1cqw;color:#69370f;background:#e3a835;letter-spacing:.15em}.beer-crate i{position:absolute;bottom:95%;width:18%;height:50%;background:#4a391a;border-radius:3px 3px 0 0;box-shadow:inset 2px 0 #97752a}.beer-crate i:nth-child(1){left:10%}.beer-crate i:nth-child(2){left:41%}.beer-crate i:nth-child(3){left:72%}
+.paper-menu{position:absolute;bottom:1%;right:18%;width:12%;padding:.7cqw;background:#ead4a3;color:#5c2b14;border:2px solid #81552a;transform:rotate(9deg);font-size:2.1cqw;text-align:center;line-height:1.35;box-shadow:2px 3px 4px #0006}.paper-menu small{font-size:1.8cqw}.coaster{position:absolute;bottom:.7%;right:9%;width:6%;height:2.7%;border-radius:50%;border:2px double #963927;background:#d7b477;transform:rotate(-12deg);box-shadow:1px 2px #593a1e}.coaster:after{content:'乾杯';display:block;text-align:center;font-size:1.6cqw;color:#82321c}
+.touring #shopfront-props{visibility:hidden}@keyframes lantern-sway{from{transform:rotate(-4deg);filter:brightness(.94)}to{transform:rotate(4deg);filter:brightness(1.1)}}@media(prefers-reduced-motion:reduce){.ambient-lantern{animation:none}}
+
+/* Keep the centre of the curtain button clickable. */
+#view-shops{clip-path:polygon(0 0,100% 0,100% 96%,53% 100%,50% 87%,47% 100%,0 96%)}
+/* A distinct gold celebration for the 300-point bonus. */
+.jackpot:before{content:'';position:absolute;inset:8% -30% 30%;background:repeating-conic-gradient(from 8deg at 50% 48%,#ffcc4938 0deg 9deg,transparent 9deg 24deg);mask-image:radial-gradient(ellipse,#000 15%,transparent 68%);animation:jackpot-rays 2.4s ease-out both}
+.jackpot:after{content:'';position:absolute;left:50%;top:34%;width:35cqw;height:35cqw;border:2px solid #ffe499;border-radius:50%;box-shadow:0 0 20px #ffce4b,inset 0 0 18px #ffce4b;animation:jackpot-ring .85s ease-out both}
+.jackpot .party-title{top:20%;left:2%;width:96%;padding:6cqw 0;z-index:1;background:radial-gradient(ellipse,#65220bee,transparent 73%);animation:jackpot-title 2.4s both;filter:drop-shadow(0 4px 0 #6d210c)}
+.jackpot .party-title strong{font-size:16cqw;line-height:1.25;color:#fff1a2;-webkit-text-stroke:.6px #b55e15;text-shadow:0 0 10px #ffbd28,0 3px #b65b13;white-space:nowrap}
+.jackpot .party-title span{font-size:19cqw;line-height:1.3;color:#fff8d3;text-shadow:0 0 18px #ffb820}
+.jackpot .party-spark{width:1.5cqw;height:1.5cqw;animation-duration:1.6s}.jackpot .party-confetti{animation-duration:2s;background:#ffd153}
+@keyframes jackpot-title{0%{opacity:0;transform:scale(.55) rotate(-7deg)}12%{opacity:1;transform:scale(1.08) rotate(2deg)}23%,77%{opacity:1;transform:scale(1) rotate(0)}100%{opacity:0;transform:translateY(-12px) scale(1.03)}}
+@keyframes jackpot-ring{0%{transform:translate(-50%,-50%) scale(.2);opacity:.8}100%{transform:translate(-50%,-50%) scale(3);opacity:0}}
+@keyframes jackpot-rays{0%{opacity:0;transform:rotate(-12deg) scale(.8)}15%,70%{opacity:1}100%{opacity:0;transform:rotate(16deg) scale(1.12)}}
+@media(prefers-reduced-motion:reduce){.jackpot:before,.jackpot:after{display:none}.jackpot .party-title{animation:none}}
+/* Compact four-part header, matching the supplied reference. */
+#game>header{inset:1% 4% auto;height:10.8%;display:grid;grid-template-columns:1.15fr 1.05fr 1.35fr .65fr;gap:2cqw;align-items:center;text-shadow:0 2px #142638}
+header .lives{gap:.5cqw;min-width:0;font-size:6.2cqw;white-space:nowrap}header .lives img{width:9cqw;height:13cqw}
+.header-time{display:flex;align-items:center;justify-content:center;gap:1cqw;white-space:nowrap}.clock-icon{width:5.5cqw;height:6.2cqw;flex:none;color:#ffe5ac}
+#timer{position:static;inset:auto;font-size:5.3cqw;line-height:1.2;white-space:nowrap;letter-spacing:0}
+header .score{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:.4cqw;min-width:0;line-height:1.1}.score-label{font-size:3.8cqw;letter-spacing:.08em}.score-value{display:flex;align-items:baseline;justify-content:center;gap:.4cqw;white-space:nowrap}header .score strong{font-size:6.3cqw;letter-spacing:0}header .score small{font-size:4.8cqw}
+header #mute-toggle{width:11cqw;height:11cqw;font-size:5.8cqw;justify-self:end;padding:0}
+
+/* Subdue the entire header artwork, without dimming the interface. */
+#game:before{content:'';position:absolute;inset:0 0 auto;height:12.8%;background:rgba(17,37,53,.82);pointer-events:none;z-index:0}
+#game>header{z-index:1}
